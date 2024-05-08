@@ -1,0 +1,117 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Information Form</title>
+    <style>
+        label {
+          display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Information Form</h2>
+    <form id="userInfoForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+        
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var age = document.getElementById("age").value;
+            var city = document.getElementById("city").value;
+
+            var userInfo = {
+                fullName: fullName,
+                email: email,
+                age: age,
+                city: city
+            };
+
+            console.log(userInfo); // Optional: Display user information in the console
+
+            // You can further process the user info, for example, save it to an array.
+            // For this example, I'll just show an alert with the user info.
+            alert("User Information:\n\nFull Name: " + fullName + "\nEmail: " + email + "\nAge: " + age + "\nCity: " + city);
+        }
+    </script>
+</body>
+</html>
+-->
+
+in this example after form submition  data are store in array 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>User Information Form</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Information Form</h2>
+    <form id="userInfoForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+        
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        // Array to store user information objects
+        var users = [];
+
+        function submitForm() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var age = document.getElementById("age").value;
+            var city = document.getElementById("city").value;
+
+            var userInfo = {
+                fullName: fullName,
+                email: email,
+                age: age,
+                city: city
+            };
+
+            users.push(userInfo); // Add user info object to the array
+
+            console.log(users); // Display the array in the console (for demonstration)
+
+            // Optional: Display a message confirming successful submission
+            alert("User Information submitted successfully!");
+
+            // You can reset the form after submission if needed
+            document.getElementById("userInfoForm").reset();
+        }
+    </script>
+</body>
+</html>
